@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="copartApp">
+<head>
+  <meta charset="utf-8">
+  <title>Copart</title>
+  <link href="./main.css" rel="stylesheet">
+</head>
+<body ng-controller="mainController">
+  <div class="container ng-cloak">
+    <div id="searchTab">
+      <h3>Enter your customer-id and zip code</h3>
+      <div id="location_search" class="searchType">
+        <label for="customerId" class="field-label">CustomerId</label>
+        <input
+          name="customerId"
+          type='text'
+          value=''
+          ng-model='customer_as'
+          autofocus
+          style="width:200px;display: inline-block;"
+          class='clearable form-control'
+          placeholder='Customer Id'
+        />
+        <br>
+        <label for="zipCode" class="field-label">Zip Code</label>
+        <input
+          name="zipCode"
+          type='text'
+          value=''
+          ng-model='zip_as'
+          autofocus
+          style="width:200px;display: inline-block;"
+          class='clearable form-control'
+          placeholder='Enter Zip Code'
+        />
+        <br>
+        <label for="radius" class="field-label">Radius</label>
+        <input
+          name="radius"
+          type='text'
+          value=''
+          ng-model='radius_as'
+          autofocus
+          style="width:200px;display: inline-block;"
+          class='clearable form-control'
+          placeholder='Radius'
+        />
+        <button class="btn btn-success"
+          type="button"
+          ng-disabled="(!customer_as && !zip_as && !radius_as)"
+          ng-click='fetchNearestYards()'>GO
+        </button>
+      </div>
+
+      <div class='search_results'>
+        <div class="table-responsive">
+          Results: {{ searchResults.length }}
+          <table class="table table-bordered">
+            <thead>
+              <tr class='row'>
+                <th class='col-xs-3'>Yard</th>
+                <th class='col-xs-3'>State</th>
+                <th class='col-xs-3'>City</th>
+                <th class='col-xs-3'>Address</th>
+                <th class='col-xs-3'>Zip</th>
+                <th class='col-xs-3'>Phone</th>
+                <th class='col-xs-3'>Fax</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class='row' ng-repeat="result in searchResults">
+                <td class='col-xs-3 ng-cloak' >{{ result.yard }}</td>
+                <td class='col-xs-3 ng-cloak' >{{ result.state }}</td>
+                <td class='col-xs-3 ng-cloak' >{{ result.city }}</td>
+                <td class='col-xs-3 ng-cloak' >{{ result.address }}</td>
+                <td class='col-xs-3 ng-cloak' >{{ result.zip }}</td>
+                <td class='col-xs-3 ng-cloak' >{{ result.phone }}</td>
+                <td class='col-xs-3 ng-cloak' >{{ result.fax }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
