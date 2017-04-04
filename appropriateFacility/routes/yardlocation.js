@@ -51,7 +51,7 @@ router.get('/', function(req, res, next) {
       // Filter nearest locations
       locations.forEach(function mapCB(location) {
         var isValid = isFinite(location.zip);
-        if (availableZipCodes.indexOf(location.zip)) availableLocations.push(location);
+        if (availableZipCodes.indexOf(location.zip) !== -1) availableLocations.push(location);
       });
       var nearestLocations;
       return res.json({

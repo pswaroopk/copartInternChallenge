@@ -20,33 +20,7 @@ copartApp.controller('mainController',['$scope','$http', function($scope, $http)
     };
 
 
-    $scope.isValid = function () {
-      if (!$scope.checkoutISBN || !$scope.checkoutCardNo) {
-        $scope.checkoutStatus = '* Please fill all required fields';
-        return false;
-      }
-      $scope.checkoutStatus = '';
-      return true;
-    }
 
-    $scope.sanitizeAuthors = function (authors) {
-      return authors.map(function (author) {
-        return author.name;
-      })
-    };
-
-    $scope.addBorrower = function (form) {
-      if (!form.$valid) return false;
-      $http.post('/borrower/', $scope.newBorrower)
-      .success(function (result) {
-        $scope.newBorrower = {};
-        $scope.borrowerStatus = result.message;
-        $scope.createdBorrower = result.data;
-      })
-      .error(function (error) {
-        console.log('Error: ', error);
-      });
-    }
 }]);
 copartApp.directive('keypress', function () {
     return function (scope, element, attrs) {

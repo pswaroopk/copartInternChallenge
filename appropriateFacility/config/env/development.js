@@ -11,7 +11,7 @@ module.exports = {
         host: 'localhost',
         database: 'copartdb',
         user: 'postgres',
-        password:'postgres'
+        password:'1234'
       }
     }
   }
