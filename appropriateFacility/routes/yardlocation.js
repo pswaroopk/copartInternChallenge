@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
       })
     }
     var endPoint = 'https://www.zipcodeapi.com/rest/';
-    var apiKey = 'wuBC8LO1XFIu4BX8FLXGYvTvF6XVr7cYBNAKzpLw4t195YhLKesIKldqsbmUiySU';
+    var apiKey = 'zDxz8n0JdYfxcU7BAgRddjjFzRXfF2SeFqNONOx0MNyZIGAiXsvaLPQlHNAmPsAv';
     var radius = req.query.radius || 500;
     var unit = 'km';
     var availableZipCodes = [];

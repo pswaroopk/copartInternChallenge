@@ -61,8 +61,8 @@ Required libraries:
 - Shapely
 - geopy
 
-1. Basic idea is loop all yards geo information to find the minimum distance from given input(latitude, longitude)
-2. Idea of optimize the solution is to use DBSCAN clustering to find the clusters, then compare with the given input(latitude, longitude) and with centroid of each cluster, find closest cluster, then find the most two closet locations in that specific cluster.
+1. Basic idea is to loop all yards geo information to find the minimum distance from given input(latitude, longitude)
+2. Idea of optimizing the solution is to use DBSCAN clustering to find the clusters, then compare with the given input (latitude, longitude) and with centroid of each cluster, find closest cluster, then find the most two closet locations in that specific cluster.
 
 Validation of address and phone number
 --------------------------------------

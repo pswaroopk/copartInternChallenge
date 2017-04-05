@@ -14,7 +14,7 @@ routers.forEach(function(router) {
   name = name[name.length - 1].split('.')[0];
   name = name === 'index' ? '' : name;
   name = '/' + name;
-  app.use(name, router);
+  app.use(name, router); 
 });
 app.use('/', express.static(__dirname + '/public'));
 // catch 404 and forward to error handler
