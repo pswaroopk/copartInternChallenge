@@ -37,7 +37,10 @@ Listing of Upcoming Auction Events
 -------------------------------------
 express, node.js, html, bootstrap, angular.js
 runs on port:3000
+
 Choose country and brand to list the available auctions with yard names and numbers and times.
+
+It displays list of results grouped by yard name, number with a nested list of event time/dates.
 
 
 Programming Assignment - Convert String to Integer
